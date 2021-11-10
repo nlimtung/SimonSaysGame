@@ -5,6 +5,8 @@ let computerSequence
 let userSequence
 let isComputerPlaying = true;
 let round = 1;
+let sound = new Audio ('audio.wav')
+    sound.volume = 0.1;
 
 
 function randomColour () {
@@ -66,12 +68,6 @@ function incrementGame () {
     }, 800)   
 }
 
-//start + play again button
-$('.start').on('click', function(evt) {
-        startGame()
-    })
-
-
 function playAgain () {
     $('h1').fadeOut(50, function(){
         $(this).text('Wrong Pattern').fadeIn(200);
@@ -81,7 +77,6 @@ function playAgain () {
     round = 1;
     $('nav').text('Round: ' + round);
     }
-
 
 function startGame (){
     $('h1').html('SIMON SAYS');
@@ -104,6 +99,7 @@ function startGame (){
     $('div1').on('click', function(evt) {
         evt.stopImmediatePropagation();
         if (isComputerPlaying) return;
+        sound.cloneNode().play();
         let litColour = $(this).css( { opacity: "1"} );
         setTimeout(function () {
             litColour.css( { opacity: "0.7",} );
@@ -133,3 +129,8 @@ function startGame (){
         }
     })
 }
+
+//start + play again button
+$('.start').on('click', function(evt) {
+        startGame()
+    })
