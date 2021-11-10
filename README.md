@@ -4,7 +4,7 @@ This is a simple javascript game of Simon Says. It uses HTML, CSS and Javascript
 
 --
 
-###Gameplay 
+### Gameplay 
 
 * The computer will first play a sequence of colours 
 * Once the computer is finished playing its sequence, it is the user's turn to replicate the sequence by clicking on the same colours as the computer
@@ -13,6 +13,6 @@ This is a simple javascript game of Simon Says. It uses HTML, CSS and Javascript
 * Once the game is over, you can click to play again 
 
 
-![screenshot](game screenshot.png)
+! [screenshot](game screenshot.png)
 
 
