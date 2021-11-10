@@ -1,11 +1,11 @@
-// uploaded to git on: Nov 6
+// uploaded to git on: Nov 9
 // defining variables:
 let colours =['red', 'green', 'blue', 'yellow']
 let computerSequence
 let userSequence
 let isComputerPlaying = true;
+let round = 1;
 
-// defining common functions
 
 function randomColour () {
     let random = colours[Math.floor(Math.random() * colours.length)];
@@ -13,41 +13,44 @@ function randomColour () {
 }
 
 function computerLightsUp(){
+    $('nav').text('Round: ' + round);
     computerSequence.forEach(function(colour, index){
         setTimeout(function(){
             if (colour ===('red')) {
-                $('.red').css( { opacity: "1.5"} );
+                $('.red').css( { opacity: "1"} );
                 setTimeout(function () {
-                    $('.red').css( { opacity: "0.6",} );
+                    $('.red').css( { opacity: "0.7",} );
                 }, 600)} 
         
             if (colour ===('blue')) {
-                $('.blue').css( { opacity: "1.5"} );
+                $('.blue').css( { opacity: "1"} );
                 setTimeout(function () {
-                    $('.blue').css( { opacity: "0.6",} );
+                    $('.blue').css( { opacity: "0.7",} );
                 }, 600)} 
     
             if (colour ===('green')) {
                 $('.green').css( { opacity: "1"} );
                 setTimeout(function () {
-                    $('.green').css( { opacity: "0.6",} );
+                    $('.green').css( { opacity: "0.7",} );
               }, 600)} 
     
             if (colour ===('yellow')) {
                 $('.yellow').css( { opacity: "1"} );
                  setTimeout(function () {
-                    $('.yellow').css( { opacity: "0.6",} );
+                    $('.yellow').css( { opacity: "0.7",} );
                 }, 600)}
     
         }, 1000 * index +800);
         
     })
+    // end of computer turn, set up player turn
     setTimeout(function(){
-        $('h1').html('Your Turn');
+        $('h1').fadeOut(200, function(){
+            $(this).text('Your Turn').fadeIn(200);
+        })
         $('h2').html('Repeat the  <br>pattern');
         isComputerPlaying = false;
         $('div1').css({'cursor': "pointer"})
-
     }, 1000 * computerSequence.length + 600)
 }
 
@@ -55,13 +58,13 @@ function incrementGame () {
     setTimeout(function(){
         userSequence=[]
         randomColour()
-        console.log(computerSequence)
         computerLightsUp()
-        $('h1').html('Simon Says');
+        $('h1').fadeOut(200, function(){
+            $(this).text('SIMON SAYS').fadeIn(200);
+        })
         $('h2').html('Remember the  <br>pattern');
-    }, 800)
-   
-  }
+    }, 800)   
+}
 
 //start + play again button
 $('.start').on('click', function(evt) {
@@ -70,13 +73,17 @@ $('.start').on('click', function(evt) {
 
 
 function playAgain () {
-    $('h1').html('Wrong Pattern');
+    $('h1').fadeOut(50, function(){
+        $(this).text('Wrong Pattern').fadeIn(200);
+    })
     $('h2').css({display: "none"});
     $('h3').css({display: "block"});
+    round = 1;
+    $('nav').text('Round: ' + round);
     }
 
 
-function startGame () {
+function startGame (){
     $('h1').html('SIMON SAYS');
     $('h2').html('Remember the <br>pattern');
     $('h2').css({display: "block"});
@@ -86,11 +93,10 @@ function startGame () {
     userSequence=[]
 
     // COMPUTER SEQUENCE
-    //randomize colours into computer sequence array
+    //randomize colours into computer sequence array + lights up 
     for (var colour= 0; colour<1;colour++) {
         randomColour()
     }
-    console.log (computerSequence)
     computerLightsUp()
 
     // USER SEQUENCE
@@ -100,36 +106,30 @@ function startGame () {
         if (isComputerPlaying) return;
         let litColour = $(this).css( { opacity: "1"} );
         setTimeout(function () {
-            litColour.css( { opacity: "0.6",} );
+            litColour.css( { opacity: "0.7",} );
         }, 400);
 
     // put colour into the user array
 
       userSequence.push( $(this).attr('class'))
-      console.log (userSequence)
     
     //compare user and computer arrays at each index 
-    userSequence.forEach(function(colour, index){
-        if (userSequence[index] !== computerSequence[index]) {
-            console.log ("they are not the same")
-            playAgain()
+        userSequence.forEach(function(colour, index){
+            if (userSequence[index] !== computerSequence[index]) {
+                playAgain()
+            }
+        })
+    //compare user and computer arrays at final index
+        if (userSequence.length === computerSequence.length) {
+            let computerString = computerSequence.toString() 
+            let userString = userSequence.toString()
+            if (computerString ===userString) {
+                // set up computer turn
+                isComputerPlaying= true;
+                $('div1').css({'cursor': "default"})
+                incrementGame();
+                round ++;
+            }
         }
     })
-
-    //compare user and computer arrays 
-    if (userSequence.length === computerSequence.length) {
-        let computerString = computerSequence.toString() 
-        let userString = userSequence.toString()
-        if (computerString ===userString) {
-            console.log("hurray")
-            isComputerPlaying= true;
-            $('div1').css({'cursor': "default"})
-            incrementGame();
-        }else {
-            playAgain()
-            console.log("Game Over")
-        }
-    }
- })
-
 }
