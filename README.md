@@ -13,6 +13,6 @@ This is a simple javascript game of Simon Says. It uses HTML, CSS and Javascript
 * Once the game is over, you can click to play again 
 
 
-![screenshot](Game Screenshot.png)
+![screenshot](Game-Screenshot.png)
 
 
