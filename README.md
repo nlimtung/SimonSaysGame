@@ -1,4 +1,4 @@
-#Simon Says
+# Simon Says
 
 This is a simple javascript game of Simon Says. It uses HTML, CSS and Javascript to recreate this classic childrens game 
 
