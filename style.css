@@ -95,10 +95,12 @@ div2 {
 }
 
 nav {
+    display: flex;
     position:absolute;
     font-size: 3vh;
     font-family: 'Orbitron', sans-serif;
 }
+
 
 h4 {
     display: flex;
@@ -115,4 +117,12 @@ h4 {
     border-radius: 5px;
     padding: 5px;
     
+}
+
+.sound-button{
+    font-size: 2vh;
+    position:relative;
+    grid-column: 1/2;
+    margin-top: -20%;
+    border-radius: 5px;
 }

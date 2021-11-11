@@ -5,8 +5,8 @@ let computerSequence
 let userSequence
 let isComputerPlaying = true;
 let round = 1;
-let sound = new Audio ('audio.wav')
-    sound.volume = 0.1;
+let sound = new Audio ('audio.mp3');
+let muteOn = false;
 
 
 function randomColour () {
@@ -41,17 +41,21 @@ function computerLightsUp(){
                  setTimeout(function () {
                     $('.yellow').css( { opacity: "0.7",} );
                 }, 600)}
-    
+            // play sound after each colour
+            if (muteOn == false) {
+                sound.cloneNode().play();
+                
+            }
         }, 1000 * index +800);
         
     })
     // end of computer turn, set up player turn
     setTimeout(function(){
+        isComputerPlaying = false;
         $('h1').fadeOut(200, function(){
             $(this).text('Your Turn').fadeIn(200);
         })
         $('h2').html('Repeat the  <br>pattern');
-        isComputerPlaying = false;
         $('div1').css({'cursor': "pointer"})
     }, 1000 * computerSequence.length + 600)
 }
@@ -99,7 +103,9 @@ function startGame (){
     $('div1').on('click', function(evt) {
         evt.stopImmediatePropagation();
         if (isComputerPlaying) return;
-        sound.cloneNode().play();
+        if (muteOn == false) {
+            sound.cloneNode().play();
+        }
         let litColour = $(this).css( { opacity: "1"} );
         setTimeout(function () {
             litColour.css( { opacity: "0.7",} );
@@ -134,3 +140,15 @@ function startGame (){
 $('.start').on('click', function(evt) {
         startGame()
     })
+
+// sound button 
+$('.sound-button').on('click', function() {
+    if (muteOn === false) {
+        $(this).text('Sound: Off');
+        muteOn = true;
+    }
+    else if (muteOn =true) {
+        $(this).text('Sound: On');
+        muteOn = false;
+    }
+})
