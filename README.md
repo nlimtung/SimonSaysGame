@@ -2,7 +2,7 @@
 
 This is a simple javascript game of Simon Says. It uses HTML, CSS and Javascript to recreate this classic childrens game 
 
----
+--
 
 ### Gameplay 
 
@@ -11,6 +11,9 @@ This is a simple javascript game of Simon Says. It uses HTML, CSS and Javascript
 * If the player clicks the right sequence of colours, it will proceed to the next round. 
 * During each round, the computer will incrementally add colours to the pattern for the user to replicate. 
 * Once the game is over, you can click to play again 
+
+--
+* Play the game [here ](https://pages.git.generalassemb.ly/nlimtung/Simon-Says-game/)
 
 
 ![screenshot](Game-Screenshot.png)

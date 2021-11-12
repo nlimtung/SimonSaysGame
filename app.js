@@ -1,4 +1,3 @@
-// uploaded to git on: Nov 9
 // defining variables:
 let colours =['red', 'green', 'blue', 'yellow']
 let computerSequence
