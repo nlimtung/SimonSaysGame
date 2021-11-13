@@ -126,7 +126,7 @@ function startGame (){
             if (computerString ===userString) {
                 // set up computer turn
                 isComputerPlaying= true;
-                $('div1').css({'cursor': "default"})
+                $('div').css({'cursor': "default"})
                 incrementGame();
                 round ++;
             }
