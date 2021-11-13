@@ -43,7 +43,6 @@ function computerLightsUp(){
             // play sound after each colour
             if (muteOn == false) {
                 sound.cloneNode().play();
-                
             }
         }, 1000 * index +800);
         
