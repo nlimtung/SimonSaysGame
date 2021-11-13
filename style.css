@@ -10,7 +10,7 @@ body {
     font-family: 'Orbitron', sans-serif;
 }
 
-div1 {
+.colour {
     height:28vh;
     width: 28vh;
     opacity: 0.7;   
@@ -93,7 +93,7 @@ h3 {
     display: none;
 }
 
-div2 {
+.background {
     background-color: black;
     position:absolute;
     border-radius: 100%;
@@ -107,6 +107,7 @@ nav {
     position:absolute;
     font-size: 3vh;
     font-family: 'Orbitron', sans-serif;
+    display: block;
 }
 
 
@@ -131,6 +132,13 @@ h4 {
     font-size: 2vh;
     position:relative;
     grid-column: 1/2;
+<<<<<<< HEAD
     margin-top: -20%;
     border-radius: 5px;
 }
+=======
+    grid-row: 4/5;
+    /* margin-top: -10%; */
+
+} 
+>>>>>>> master
