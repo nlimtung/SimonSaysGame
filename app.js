@@ -8,6 +8,7 @@ let sound = new Audio ('audio.wav');
 let muteOn = false;
 
 
+
 function randomColour () {
     let random = colours[Math.floor(Math.random() * colours.length)];
     computerSequence.push(random)
