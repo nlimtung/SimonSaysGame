@@ -116,3 +116,9 @@ h4 {
     padding: 5px;
     
 }
+
+.sound-button {
+    font-size: 2vh; 
+    grid-column: 1/2;
+    margin-top: -10%;
+} 
