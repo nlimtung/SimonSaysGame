@@ -8,7 +8,6 @@ let sound = new Audio ('audio.mp3');
 let muteOn = false;
 
 
-
 function randomColour () {
     let random = colours[Math.floor(Math.random() * colours.length)];
     computerSequence.push(random)
@@ -19,27 +18,27 @@ function computerLightsUp(){
     computerSequence.forEach(function(colour, index){
         setTimeout(function(){
             if (colour ===('red')) {
-                $('.red').css( { opacity: "1"} );
+                $('#red').css( { opacity: "1"} );
                 setTimeout(function () {
-                    $('.red').css( { opacity: "0.7",} );
+                    $('#red').css( { opacity: "0.7",} );
                 }, 600)} 
         
             if (colour ===('blue')) {
-                $('.blue').css( { opacity: "1"} );
+                $('#blue').css( { opacity: "1"} );
                 setTimeout(function () {
-                    $('.blue').css( { opacity: "0.7",} );
+                    $('#blue').css( { opacity: "0.7",} );
                 }, 600)} 
     
             if (colour ===('green')) {
-                $('.green').css( { opacity: "1"} );
+                $('#green').css( { opacity: "1"} );
                 setTimeout(function () {
-                    $('.green').css( { opacity: "0.7",} );
+                    $('#green').css( { opacity: "0.7",} );
               }, 600)} 
     
             if (colour ===('yellow')) {
-                $('.yellow').css( { opacity: "1"} );
+                $('#yellow').css( { opacity: "1"} );
                  setTimeout(function () {
-                    $('.yellow').css( { opacity: "0.7",} );
+                    $('#yellow').css( { opacity: "0.7",} );
                 }, 600)}
             // play sound after each colour
             if (muteOn == false) {
@@ -99,7 +98,7 @@ function startGame (){
 
     // USER SEQUENCE
     // lights up when you click
-    $('div1').on('click', function(evt) {
+    $('div').on('click', function(evt) {
         evt.stopImmediatePropagation();
         if (isComputerPlaying) return;
         if (muteOn == false) {
