@@ -4,7 +4,7 @@ let computerSequence
 let userSequence
 let isComputerPlaying = true;
 let round = 1;
-let sound = new Audio ('audio.wav');
+let sound = new Audio ('audio.mp3');
 let muteOn = false;
 
 

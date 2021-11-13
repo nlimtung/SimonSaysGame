@@ -119,7 +119,6 @@ h4 {
     
 }
 
-<<<<<<< HEAD
 .sound-button{
     font-size: 2vh;
     position:relative;
@@ -127,10 +126,3 @@ h4 {
     margin-top: -20%;
     border-radius: 5px;
 }
-=======
-.sound-button {
-    font-size: 2vh; 
-    grid-column: 1/2;
-    margin-top: -10%;
-} 
->>>>>>> master
