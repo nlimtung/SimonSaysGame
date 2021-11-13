@@ -54,7 +54,7 @@ function computerLightsUp(){
             $(this).text('Your Turn').fadeIn(200);
         })
         $('h2').html('Repeat the  <br>pattern');
-        $('div1').css({'cursor': "pointer"})
+        $('.colour').css({'cursor': "pointer"})
     }, 1000 * computerSequence.length + 600)
 }
 
@@ -126,7 +126,7 @@ function startGame (){
             if (computerString ===userString) {
                 // set up computer turn
                 isComputerPlaying= true;
-                $('div').css({'cursor': "default"})
+                $('.colour').css({'cursor': "default"})
                 incrementGame();
                 round ++;
             }
