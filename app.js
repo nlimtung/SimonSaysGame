@@ -98,7 +98,7 @@ function startGame (){
 
     // USER SEQUENCE
     // lights up when you click
-    $('div').on('click', function(evt) {
+    $('.colour').on('click', function(evt) {
         evt.stopImmediatePropagation();
         if (isComputerPlaying) return;
         if (muteOn == false) {
@@ -111,7 +111,7 @@ function startGame (){
 
     // put colour into the user array
 
-      userSequence.push( $(this).attr('class'))
+      userSequence.push( $(this).attr('id'))
     
     //compare user and computer arrays at each index 
         userSequence.forEach(function(colour, index){
