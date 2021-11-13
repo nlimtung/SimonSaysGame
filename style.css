@@ -132,13 +132,7 @@ h4 {
     font-size: 2vh;
     position:relative;
     grid-column: 1/2;
-<<<<<<< HEAD
     margin-top: -20%;
     border-radius: 5px;
-}
-=======
     grid-row: 4/5;
-    /* margin-top: -10%; */
-
 } 
->>>>>>> master
